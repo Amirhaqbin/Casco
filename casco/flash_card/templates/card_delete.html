@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}delete card{% endblock %}
+
+{% block content %}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <p style="font-size: 24pt;">Are you sure you want to delete <b>"{{object.title}}"</b>?</p>
+        <p>
+            <input type="submit" value="Delete">
+            <a href="{% url 'flash_card:deck-detail' object.deck.pk %}"><input type="button" value="Cancel"></a>
+        </p>
+    </form>
+{% endblock %}

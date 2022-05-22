@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}update card{% endblock %}
+
+{% block content %}
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div>
+            <input type="submit" value="Save changes">
+            <a href="{% url 'flash_card:deck-detail' object.deck.pk %}"><input type="button" value="Cancel"></a>
+        </div>
+    </form>
+{% endblock %}
